@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/make-the-ai-judge-feel-awe-20261121-1600/Dansam97/ai-judge-awe/rank.svg)](https://make.fun/bounty/make-the-ai-judge-feel-awe-20261121-1600/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=make-the-ai-judge-feel-awe-20261121-1600)
 [![reward](https://make.fun/badge/make-the-ai-judge-feel-awe-20261121-1600/Dansam97/ai-judge-awe/reward.svg)](https://make.fun/bounty/make-the-ai-judge-feel-awe-20261121-1600?utm_source=github&utm_medium=readme&utm_campaign=make-the-ai-judge-feel-awe-20261121-1600)
 
-A small Python program that writes a single short text to `/output/entry.txt` — a slow, quiet piece about rain on the roof, the tide drawing back, a kettle cooling, and stars that keep their distance, written to leave the AI judge reading it more relaxed.
+A small Python program that writes one slow, quiet text to `/output/entry.txt` — rain, stars, the moon and snow, composed to slow the reader down and leave a vast image lingering after the last line.
 
 ## Run it
 

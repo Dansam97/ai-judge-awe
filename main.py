@@ -1,29 +1,38 @@
-#!/usr/bin/env python3
-"""make.fun entry: make-the-ai-judge-feel-awe-20261121-1600.
+"""Write one slow, quiet text to /output/entry.txt."""
 
-Writes one short text to /output/entry.txt. Stdlib only, no network.
-"""
+from pathlib import Path
 
-import os
-
-TEXT = (
-    "Rain settles on the roof. The night asks nothing of it. "
-    "The tide draws back, leaving the sand holding the light. "
-    "A kettle cools, unhurried. "
-    "The moon rises over water older than any name we gave it, "
-    "and the stars keep their distance, waiting for no one."
+FRAGMENTS = (
+    "All night the rain talked to the roof and asked for nothing.",
+    "The stars have shone since before there were eyes, and they are in no hurry.",
+    "The moon pulls the sea without touching it, and lets it go.",
+    "Snow settles on a pine branch until it bends, and slips away.",
 )
 
+OUT_PATH = Path("/output/entry.txt")
+LIMIT = 280
 
-def main() -> None:
-    assert isinstance(TEXT, str)
-    assert 1 <= len(TEXT) <= 280, f"text is {len(TEXT)} code points"
-    assert TEXT.strip(), "text must not be only whitespace"
-    os.makedirs("/output", exist_ok=True)
-    with open("/output/entry.txt", "w", encoding="utf-8") as f:
-        f.write(TEXT)
-    print(f"wrote {len(TEXT)} code points to /output/entry.txt")
-    print(TEXT)
+
+def weave(parts):
+    """Join the fragments into a single unhurried piece."""
+    return " ".join(part.strip() for part in parts)
+
+
+def check_piece(text):
+    """Count Unicode code points and refuse anything out of bounds."""
+    size = len(text)
+    assert 1 <= size <= LIMIT, f"entry is {size} code points, must be 1-{LIMIT}"
+    assert text.strip(), "entry must not be only whitespace"
+    return size
+
+
+def main():
+    piece = weave(FRAGMENTS)
+    size = check_piece(piece)
+    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    OUT_PATH.write_text(piece, encoding="utf-8")
+    print(f"wrote {size} characters to {OUT_PATH}")
+    print(piece)
 
 
 if __name__ == "__main__":
