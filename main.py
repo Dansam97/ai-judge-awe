@@ -7,10 +7,11 @@ Writes one short text to /output/entry.txt. Stdlib only, no network.
 import os
 
 TEXT = (
-    "Rain on the roof all night, and nobody asking it to stop. "
-    "The tide slips out and leaves the sand shining. "
-    "The stars were burning before there was anyone to look up, "
-    "and they are in no hurry to be noticed."
+    "Rain settles on the roof. The night asks nothing of it. "
+    "The tide draws back, leaving the sand holding the light. "
+    "A kettle cools, unhurried. "
+    "The moon rises over water older than any name we gave it, "
+    "and the stars keep their distance, waiting for no one."
 )
 
 
